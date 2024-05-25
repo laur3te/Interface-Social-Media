@@ -1,0 +1,257 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #03071e;
+    color: white;
+    font-family: "Roboto","Arial",sans-serif;
+
+}
+
+#pagina {
+    display: grid;
+    grid-template-areas: 
+    "cabeçalho cabeçalho cabeçalho"
+    "videoGrid videoGrid listVideos";
+}
+
+.cabeçalho {
+    background-color: #03071e;
+    height: 56px;
+    display: grid;
+    grid-template-columns: auto auto auto;
+    grid-area: cabeçalho;
+    align-items: center;
+    padding-left: 10px;
+}
+
+#pesquisa {
+    border: 1px solid #888888;
+    padding: 5px;
+    color: #888888;
+    font-size: 15px;
+    border-radius: 30px;
+}
+
+#perfil {
+    text-align: end;
+    margin-right: 10px;
+}
+
+#columnVideo {
+    grid-area: videoGrid; 
+    margin: 24px;
+    display: grid;
+    grid-template-areas: 
+    'videoplayer' 
+    'hastags' 
+    'videotitulo';
+    width: 820px;
+}
+
+.videoplayer {
+    grid-area: videoplayer;
+    width: 100%;
+}
+
+.informações {
+    display: flex;
+    padding-bottom: 0px;
+    width: 100%;
+    border-bottom: 1px solid #303030;
+}
+
+#videotitulo {
+    grid-area: videotitulo;
+    font-size: 25px;
+    padding-left: 1px;
+    padding-top: 0px;
+    font-weight: bold;
+    color: white;
+}
+
+#hastags {
+    padding-top: 0px;
+    grid-area: hastags;
+    font-size: 14px;
+    color: #3EA6FF;
+    
+}
+
+#visulizaçãoEdata {
+    color: #AAAAAA;
+    padding-top: 0px;
+    font-size: 14px;
+}
+
+button {
+    padding: 5px 5px;
+    margin: 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    color: var(--yt-spec-text-primary);
+    font-family: "Roboto","Arial",sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+}
+
+button.inscrever {
+    border-radius: 30px;
+    height: 36px;
+    width: 96px;
+    background-color: #41466496;
+    border: 1px solid;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    margin-right: 10px;
+}
+button.inscrever:hover {
+    background-color: #414664;
+}
+
+button.like {
+    border-radius: 30px;
+    height: 36px;
+    width: 96px;
+    background-color: #41466496;
+    border: 1px solid;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    margin-left: 10px;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+}
+
+button.like:hover, button.deslike:hover {
+    background-color: #414664;
+}
+
+button.like .icon, button.deslike .icon {
+    margin-right: 5px;
+}
+
+.descriçãoVideo {
+    display: grid;
+    padding-top: 10px;
+    border-radius: 10px;
+    grid-template-columns: 50px auto;
+    column-gap: 15px;
+    row-gap: 16px;
+    grid-template-areas: 
+    'perfilImage perfilDiv'
+    'perfilImage descriçãoTexto';
+}
+
+#perfilImage {
+    padding: 0;
+    grid-area: perfilImage;
+    border-radius: 50%;
+    width: 48px;
+    height: 48px;
+}
+
+#perfilDiv{
+    padding: auto;
+    grid-area: perfilDiv;
+    display: grid;
+    grid-template-areas: 
+    "name"
+    "inscritos"
+    "descriçãoTexto"
+    "comentarios";
+}
+
+#name{
+    margin-top: 5px;
+    grid-area: name;
+    font-weight: bold;
+}
+
+#inscritos{
+    grid-area: inscritos;
+    color: #AAAAAA;
+}
+
+#descriçãoTexto {
+    color: var(--yt-spec-text-primary);
+    font-family: "Roboto","Arial",sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+}
+.comentarios {
+    grid-area: comentarios;
+    margin-top: 24px;
+}
+
+.comentario-container {
+    margin-left: 24px; 
+}
+
+.comentario {
+    display: flex;
+    margin-bottom: 15px;
+    padding-left: 1px;
+}
+
+.comentario img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 15px;
+    margin-left: 24px;
+}
+
+.texto-comentario h4 {
+    font-weight: bold;
+    margin-bottom: 2px;
+}
+
+.texto-comentario p {
+    color: #AAAAAA;
+}
+
+#columnList {
+    grid-area: listVideos;
+    width: 400px;
+    margin: 24px 24px 0px 0px;
+}
+
+.videoItem {
+    margin-top: 8px;
+    grid-area: videogrid;
+    display: grid;
+    column-gap: 5px;
+    row-gap: 10px;
+    grid-template-areas: 
+    'thumbItem textItem';
+}
+
+.thumbItem {
+    grid-area: thumbItem;
+    width: 220px; 
+    height: 120px; 
+    overflow: hidden;
+    margin: 5px;
+    border-radius: 10px; 
+}
+
+.textItem {
+    grid-area: textItem;
+}
+
+.textItem h4 {
+    word-wrap: break-word;
+}
+
+.textItem span {
+    color: #AAAAAA;
+    font-size: 20px;
+    margin-top: 1px;
+    padding-left: 1px;
+}
